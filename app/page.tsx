@@ -1,8 +1,16 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
 export default function HomePage() {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -22,8 +30,10 @@ export default function HomePage() {
 
   return (
     <main className="bg-white text-gray-900 px-6 py-10 space-y-24 font-sans">
+      {/* Logo */}
       <div className="text-4xl font-bold text-blue-700">Lenk Logistic</div>
 
+      {/* Hero */}
       <section className="text-center space-y-4">
         <h1 className="text-3xl md:text-5xl font-semibold">
           Zuverlässige Umzüge ohne Stress
@@ -31,13 +41,16 @@ export default function HomePage() {
         <p className="text-xl text-gray-600">
           Jetzt Angebot sichern: <strong>030 12345678</strong>
         </p>
-        <img
+        <Image
           src="/images/lkw.jpg"
           alt="LKW"
-          className="mx-auto rounded-xl shadow-md max-w-xl"
+          width={800}
+          height={400}
+          className="mx-auto rounded-xl shadow-md"
         />
       </section>
 
+      {/* Über uns */}
       <section className="max-w-3xl mx-auto text-center space-y-3">
         <h2 className="text-2xl font-semibold">Über uns</h2>
         <p>
@@ -46,6 +59,7 @@ export default function HomePage() {
         </p>
       </section>
 
+      {/* Leistungen */}
       <section className="text-center">
         <h2 className="text-2xl font-semibold mb-6">Unsere Leistungen</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -67,6 +81,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Kontaktformular */}
       <section className="max-w-lg mx-auto text-center space-y-6">
         <h2 className="text-2xl font-semibold">Kontakt</h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -78,8 +93,10 @@ export default function HomePage() {
               }
               placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
               className="w-full border p-2 rounded"
-              value={(form as any)[field]}
-              onChange={(e) => setForm({ ...form, [field]: e.target.value })}
+              value={form[field as keyof FormData]}
+              onChange={(e) =>
+                setForm({ ...form, [field as keyof FormData]: e.target.value })
+              }
               required
             />
           ))}
