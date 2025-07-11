@@ -124,9 +124,15 @@ export default function HomePage() {
         </p>
       </section>
 
-      <footer className="text-center text-xs text-gray-400 mt-16">
-        © 2025 Lenk Logistic · <a href="#">Impressum</a> ·{" "}
-        <a href="#">Datenschutz</a>
+      <footer className="text-center text-xs text-gray-400 mt-16 space-x-4">
+        © 2025 Lenk Logistic ·
+        <a href="/impressum" className="underline text-blue-600">
+          Impressum
+        </a>{" "}
+        ·
+        <a href="/datenschutz" className="underline text-blue-600">
+          Datenschutz
+        </a>
       </footer>
     </main>
   );
