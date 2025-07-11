@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+/* import Image from "next/image"; */
 import { useState } from "react";
 
 type FormData = {
@@ -41,13 +41,13 @@ export default function HomePage() {
         <p className="text-xl text-gray-600">
           Jetzt Angebot sichern: <strong>030 12345678</strong>
         </p>
-        <Image
+        {/*      <Image
           src="/images/lkw.jpg"
           alt="LKW"
           width={800}
           height={400}
           className="mx-auto rounded-xl shadow-md"
-        />
+        /> */}
       </section>
 
       {/* Über uns */}
