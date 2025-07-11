@@ -53,10 +53,7 @@ export default function HomePage() {
       {/* Über uns */}
       <section className="max-w-3xl mx-auto text-center space-y-3">
         <h2 className="text-2xl font-semibold">Über uns</h2>
-        <p>
-          Seit über 10 Jahren bringt Lenk Logistic Ihre Welt sicher von A nach
-          B. Wir stehen für Transparenz, Präzision und Verlässlichkeit.
-        </p>
+        <p>Wir stehen für Transparenz, Präzision und Verlässlichkeit.</p>
       </section>
 
       {/* Leistungen */}
