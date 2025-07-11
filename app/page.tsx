@@ -24,7 +24,7 @@ export default function HomePage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
-    alert("Nachricht gesendet!");
+
     setForm({ name: "", email: "", phone: "", message: "" });
   };
 
