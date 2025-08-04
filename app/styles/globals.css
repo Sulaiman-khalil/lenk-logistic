@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* ✨ Grundlegendes Reset */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* 🖼️ Transparentes Hintergrundbild */
+.background-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/images/background.jpg"); /* Bild liegt im public/images */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2;
+}
+
+/* 📱 Responsive Textverhalten */
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 🔗 Standard-Link-Styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 🧑‍🎨 Layout-Anpassungen für Tailwind (optional) */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    color: var(--foreground);
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
