@@ -24,7 +24,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: url("/images/background.png"); /* Bild liegt im public/images */
+  background-image: url("/images/background.jpg"); /* Bild liegt im public/images */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

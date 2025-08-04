@@ -31,6 +31,7 @@ export default function HomePage() {
   return (
     <main className="bg-white text-gray-900 px-6 py-10 space-y-24 font-sans">
       {/* Logo */}
+      <div className="background-overlay" />
 
       <div className="text-4xl font-bold text-blue-700">Lenk Logistik</div>
 
