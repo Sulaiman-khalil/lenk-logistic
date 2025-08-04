@@ -1,5 +1,5 @@
 "use client";
-/* import Image from "next/image"; */
+import Image from "next/image";
 import { useState } from "react";
 
 type FormData = {
@@ -31,7 +31,8 @@ export default function HomePage() {
   return (
     <main className="bg-white text-gray-900 px-6 py-10 space-y-24 font-sans">
       {/* Logo */}
-      <div className="text-4xl font-bold text-blue-700">Lenk Logistic</div>
+
+      <div className="text-4xl font-bold text-blue-700">Lenk Logistik</div>
 
       {/* Hero */}
       <section className="text-center space-y-4">
@@ -39,15 +40,16 @@ export default function HomePage() {
           Zuverlässige Umzüge ohne Stress
         </h1>
         <p className="text-xl text-gray-600">
-          Jetzt Angebot sichern: <strong>030 12345678</strong>
+          Jetzt Angebot sichern:{" "}
+          <strong className="text-3xl font-bold "> +4917670255874</strong>
         </p>
-        {/*      <Image
-          src="/images/lkw.jpg"
-          alt="LKW"
-          width={800}
-          height={400}
+        <Image
+          src="/images/logo.jpg"
+          alt="logo"
+          width={400}
+          height={200}
           className="mx-auto rounded-xl shadow-md"
-        /> */}
+        />
       </section>
 
       {/* Über uns */}
@@ -117,7 +119,7 @@ export default function HomePage() {
           </button>
         </form>
         <p className="text-sm text-gray-500">
-          Telefon: 030 12345678 · E-Mail: info@lenk-logistic.de
+          Telefon:+4917670255874 · E-Mail: Logistiklenk@gmail.com
         </p>
       </section>
 
