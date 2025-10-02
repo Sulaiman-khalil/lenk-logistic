@@ -1,38 +1,48 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+// import { useState } from "react";
 
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+// type FormData = {
+//   name: string;
+//   email: string;
+//   phone: string;
+//   message: string;
+// };
 
 export default function HomePage() {
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  // const [form, setForm] = useState<FormData>({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   message: "",
+  // });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   await fetch("/api/contact", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(form),
+  //   });
 
-    setForm({ name: "", email: "", phone: "", message: "" });
-  };
+  //   setForm({ name: "", email: "", phone: "", message: "" });
+  // };
 
   return (
     <main className="bg-white text-gray-900 px-6 py-10 space-y-24 font-sans">
       {/* Logo */}
       <div className="background-overlay" />
-      <div className="text-4xl font-bold text-blue-700">Lenk Logistik</div>
+      <div className="flex items-start space-x-4">
+        <Image
+          src="/images/logo.jpg"
+          alt="logo"
+          width={120}
+          height={60}
+          className="ml-0"
+          style={{ height: "auto" }}
+        />
+        <div className="text-4xl font-bold text-blue-700">Lenk Logistik</div>
+      </div>
 
       {/* Hero */}
       <section className="text-center space-y-4">
@@ -43,13 +53,6 @@ export default function HomePage() {
           Jetzt Angebot sichern:{" "}
           <strong className="text-3xl font-bold "> +4917670255874</strong>
         </p>
-        <Image
-          src="/images/logo.jpg"
-          alt="logo"
-          width={200}
-          height={100}
-          className="mx-auto rounded-xl shadow-md"
-        />
       </section>
 
       {/* Über uns */}
@@ -81,7 +84,7 @@ export default function HomePage() {
       </section>
 
       {/* Kontaktformular */}
-      <section className="max-w-lg mx-auto text-center space-y-6">
+      {/* <section className="max-w-lg mx-auto text-center space-y-6">
         <h2 className="text-2xl font-semibold">Kontakt</h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
           {["name", "email", "phone"].map((field) => (
@@ -118,10 +121,10 @@ export default function HomePage() {
             Absenden
           </button>
         </form>
-        <p className="text-sm text-gray-500">
-          Telefon:+4917670255874 · E-Mail: Logistiklenk@gmail.com
-        </p>
-      </section>
+      </section> */}
+      <p className="text-sm text-gray-500 text-center">
+        📞 +49 176 70255874 · 📧 logistiklenk@gmail.com
+      </p>
 
       <footer className="text-center text-xs text-gray-400 mt-16 space-x-4">
         © 2025 Lenk Logistic ·
