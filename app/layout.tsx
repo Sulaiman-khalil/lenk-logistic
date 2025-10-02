@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lenk Logistik",
   description: "company website for Lenk Logistik",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
