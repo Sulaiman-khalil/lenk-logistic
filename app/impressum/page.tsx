@@ -5,20 +5,20 @@ export default function Impressum() {
       <p>Lenk Logistic</p>
       <p>Inhaber: Osman Ahmad</p>
       <p>
-        Musterstraße 12
+        zingster str.21
         <br />
-        10115 Berlin
+        13051 Berlin
       </p>
-      <p>Telefon: 030 12345678</p>
-      <p>E-Mail: info@lenk-logistic.de</p>
+      <p>Telefon: +4917670255874 </p>
+      <p>E-Mail: Logistiklenk@gmail.com</p>
       <p>
         Umsatzsteuer-ID gemäß §27 a Umsatzsteuergesetz: <br />
-        DE123456789
+        DE02HST00000026026
       </p>
       <p>
         Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
         <br />
-        Sulaiman Khalil, Musterstraße 12, 10115 Berlin
+        Osman Ahmad, zingster str.21, 13051 Berlin
       </p>
       <p>
         Plattform der EU-Kommission zur Online-Streitbeilegung:{" "}

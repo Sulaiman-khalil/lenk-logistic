@@ -5,11 +5,11 @@ export default function Datenschutz() {
       <p>
         Verantwortlich für die Datenverarbeitung ist:
         <br />
-        Lenk Logistic, Sulaiman Khalil
+        Lenk Logistic, Osman Ahmad
         <br />
-        Musterstraße 12, 10115 Berlin
+        zingster str21, 13051 Berlin
         <br />
-        info@lenk-logistic.de
+        Logistiklenk@gmail.com
       </p>
       <p>
         Wir verarbeiten personenbezogene Daten ausschließlich zur Bearbeitung
