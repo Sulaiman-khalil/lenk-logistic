@@ -1,4 +1,10 @@
+export const metadata = {
+  title: "Impressum – Lenk Logistik",
+};
+
 export default function Impressum() {
+  // app/impressum/page.tsx
+
   return (
     <main className="max-w-3xl mx-auto px-6 py-12 text-gray-800 space-y-4">
       <h1 className="text-3xl font-semibold mb-4">Impressum</h1>
