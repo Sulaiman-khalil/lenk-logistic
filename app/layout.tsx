@@ -12,11 +12,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Lenk Logistik",
-  description: "company website for Lenk Logistik",
-  icons: {
-    icon: "/favicon.ico",
+export const metadata = {
+  title: "Lenk Logistik – Ihr Partner für smarte Transporte",
+  description:
+    "Logistiklösungen für die Zukunft – nachhaltig, effizient, digital.",
+  openGraph: {
+    title: "Lenk Logistik",
+    description: "Nachhaltige Transportlösungen für morgen.",
+    url: "https://www.lenk-logistik.com",
+    siteName: "Lenk Logistik",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lenk Logistik",
+    description: "Effiziente Logistiklösungen für die Zukunft.",
   },
 };
 
