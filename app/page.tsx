@@ -1,32 +1,41 @@
 "use client";
 import Image from "next/image";
-// import { useState } from "react";
+import { useState } from "react";
 
-// type FormData = {
-//   name: string;
-//   email: string;
-//   phone: string;
-//   message: string;
-// };
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
 
 export default function HomePage() {
-  // const [form, setForm] = useState<FormData>({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   message: "",
-  // });
+  const [form, setForm] = useState<FormData>({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   await fetch("/api/contact", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(form),
-  //   });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
 
-  //   setForm({ name: "", email: "", phone: "", message: "" });
-  // };
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    if (!res.ok) {
+      setStatus("error");
+      return;
+    }
+
+    setForm({ name: "", email: "", phone: "", message: "" });
+    setStatus("success");
+  };
 
   return (
     <main className="bg-white text-gray-900 px-6 py-10 space-y-24 font-sans">
@@ -84,20 +93,18 @@ export default function HomePage() {
       </section>
 
       {/* Kontaktformular */}
-      {/* <section className="max-w-lg mx-auto text-center space-y-6">
+      <section className="max-w-lg mx-auto text-center space-y-6">
         <h2 className="text-2xl font-semibold">Kontakt</h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
-          {["name", "email", "phone"].map((field) => (
+          {(["name", "email", "phone"] as const).map((field) => (
             <input
               key={field}
-              type={
-                field === "email" ? "email" : field === "phone" ? "tel" : "text"
-              }
+              type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
               placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
               className="w-full border p-2 rounded"
-              value={form[field as keyof FormData]}
+              value={form[field]}
               onChange={(e) =>
-                setForm({ ...form, [field as keyof FormData]: e.target.value })
+                setForm({ ...form, [field]: e.target.value })
               }
               required
             />
@@ -112,16 +119,23 @@ export default function HomePage() {
           />
           <label className="text-sm block text-left">
             <input type="checkbox" required className="mr-2" /> Ich stimme der
-            Datenschutzerklärung zu
+            <a href="/datenschutz" className="underline text-blue-600 ml-1">Datenschutzerklärung</a> zu
           </label>
           <button
             type="submit"
-            className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800"
+            disabled={status === "loading"}
+            className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 disabled:opacity-50"
           >
-            Absenden
+            {status === "loading" ? "Wird gesendet..." : "Absenden"}
           </button>
+          {status === "success" && (
+            <p className="text-green-600 text-sm">✅ Nachricht erfolgreich gesendet!</p>
+          )}
+          {status === "error" && (
+            <p className="text-red-600 text-sm">❌ Fehler beim Senden. Bitte versuche es später erneut.</p>
+          )}
         </form>
-      </section> */}
+      </section>
       <p className="text-sm text-gray-500 text-center">
         📞 +49 176 70255874 · 📧 logistiklenk@gmail.com
       </p>

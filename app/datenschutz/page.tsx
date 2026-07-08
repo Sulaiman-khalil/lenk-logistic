@@ -13,7 +13,7 @@ export default function Datenschutz() {
       </p>
       <p>
         Wir verarbeiten personenbezogene Daten ausschließlich zur Bearbeitung
-        von Kontaktanfragen. Die Speicherung erfolgt DSGVO-konform über Upstash.
+        von Kontaktanfragen.
       </p>
       <p>
         Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung
